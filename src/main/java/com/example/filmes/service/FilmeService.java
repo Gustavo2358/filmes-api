@@ -20,4 +20,21 @@ public class FilmeService {
     public Filme postMovie(Filme filme){
         return filmeRepository.save(filme);
     }
+
+    public Filme getMoviesByNome(String nome) {
+        return filmeRepository.findByNome(nome);
+    }
+
+    public List<Filme> getMoviesByGenero(String genero) {
+        return filmeRepository.findByGenero(genero);
+    }
+
+    public List<Filme> getMoviesByAnoLancamento(String ano) {
+        return filmeRepository.findByAnoLancamento(ano);
+    }
+
+    public List<Filme> getMoviesByAtor(String ator) {
+        return filmeRepository.findByAtores(ator);
+    }
+
 }

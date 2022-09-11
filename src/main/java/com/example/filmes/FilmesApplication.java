@@ -34,8 +34,7 @@ public class FilmesApplication implements CommandLineRunner {
 
 //        mark.getFilmes().add(starWars);
 //        carrie.getFilmes().add(starWars);
-        starWars.getAtores().add("Carrie Fisher");
-        starWars.getAtores().add("Mark Hammil");
+        starWars.getAtores().addAll(Arrays.asList("Carrie Fisher", "Mark Hammil", "Harrison Ford"));
 
         filmeRepository.save(starWars);
 //        atorRepository.saveAll(Arrays.asList(mark, carrie));

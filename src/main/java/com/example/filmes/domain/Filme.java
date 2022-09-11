@@ -1,6 +1,7 @@
 package com.example.filmes.domain;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class Filme {
     private Long id;
     private String nome;
     private String genero;
+    @JsonProperty("ano_lancamento")
     private String anoLancamento;
 
 //    @JsonManagedReference

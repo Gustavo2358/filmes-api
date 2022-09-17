@@ -21,6 +21,7 @@ public class FilmeController {
         return new ResponseEntity<>(filmeService.getMovies(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<Filme> postMovie(@RequestBody Filme filme){
         Filme filmeResponse =  filmeService.postMovie(filme);

@@ -2,7 +2,6 @@ package com.example.filmes.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.*;
@@ -26,18 +25,8 @@ public class Ator {
             inverseJoinColumns = @JoinColumn(name = "filme_id"))
     private List<Filme> filmes = new ArrayList<>();
 
-    public Ator(Long id,String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
-
     public Ator(String nome) {
         this.nome = nome;
-    }
-
-    public Ator(String nome, List<Filme> filmes) {
-        this.nome = nome;
-        this.filmes = filmes;
     }
 
     @Override

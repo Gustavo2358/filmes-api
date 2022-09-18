@@ -1,5 +1,6 @@
 package com.example.filmes.repository;
 
+import com.example.filmes.domain.Ator;
 import com.example.filmes.domain.Filme;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,7 +14,7 @@ public interface FilmeRepository extends JpaRepository<Filme, Long> {
 
     List<Filme> findByAnoLancamento(String ano);
 
-    List<Filme> findByAtores(String genero);
+    List<Filme> findByAtores_Nome(String ator);
 
 
 }

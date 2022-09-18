@@ -13,10 +13,6 @@ public class AtorService {
 
     AtorRepository atorRepository;
 
-    public Ator saveAtor(Ator ator) {
-        return atorRepository.save(ator);
-    }
-
     public List<Ator> findAllById(List<Long> atoresId) {
         return atorRepository.findAllById(atoresId);
     }
@@ -24,4 +20,9 @@ public class AtorService {
     public List<Ator> findAll() {
         return atorRepository.findAll();
     }
+
+    public List<Ator> saveActors(List<Ator> actors) {
+       return atorRepository.saveAll(actors);
+    }
+
 }

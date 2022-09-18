@@ -30,24 +30,24 @@ public class FilmeController {
         return new ResponseEntity<>(filmeResponse, HttpStatus.CREATED);
     }
 
-//    @GetMapping("/nome")
-//    public ResponseEntity<FilmeDTO> getMoviesByNome(@RequestParam String nome){
-//        return new ResponseEntity<>(filmeService.getMoviesByNome(nome), HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/genero")
-//    public ResponseEntity<List<FilmeDTO>> getMoviesByGenero(@RequestParam String genero){
-//        return new ResponseEntity<>(filmeService.getMoviesByGenero(genero), HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/ano")
-//    public ResponseEntity<List<FilmeDTO>> getMoviesByAnoLancamento(@RequestParam String ano){
-//        return new ResponseEntity<>(filmeService.getMoviesByAnoLancamento(ano), HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/ator")
-//    public ResponseEntity<List<FilmeDTO>> getMoviesByAtor(@RequestParam String ator){
-//        return new ResponseEntity<>(filmeService.getMoviesByAtor(ator), HttpStatus.OK);
-//    }
+    @GetMapping("/nome")
+    public ResponseEntity<Filme> getMoviesByNome(@RequestParam String nome){
+        return new ResponseEntity<>(filmeService.getMoviesByNome(nome), HttpStatus.OK);
+    }
+
+    @GetMapping("/genero")
+    public ResponseEntity<List<Filme>> getMoviesByGenero(@RequestParam String genero){
+        return new ResponseEntity<>(filmeService.getMoviesByGenero(genero), HttpStatus.OK);
+    }
+
+    @GetMapping("/ano")
+    public ResponseEntity<List<Filme>> getMoviesByAnoLancamento(@RequestParam String ano){
+        return new ResponseEntity<>(filmeService.getMoviesByAnoLancamento(ano), HttpStatus.OK);
+    }
+
+    @GetMapping("/ator")
+    public ResponseEntity<List<Filme>> getMoviesByAtor(@RequestParam String ator){
+        return new ResponseEntity<>(filmeService.getMoviesByAtor(ator), HttpStatus.OK);
+    }
 
 }

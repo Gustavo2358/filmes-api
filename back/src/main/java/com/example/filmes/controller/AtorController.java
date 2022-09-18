@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/atores")
@@ -19,11 +20,11 @@ public class AtorController {
 
     @CrossOrigin
     @PostMapping
-    public ResponseEntity<Ator> postActor(@RequestBody AtorDTO atorDTO){
-        Ator atorResponse =  atorService.saveAtor(new Ator(atorDTO.getNome()));
-        return new ResponseEntity<>(atorResponse, HttpStatus.CREATED);
+    public ResponseEntity<List<Ator>> postActors(@RequestBody List<AtorDTO> actorsDTO){
+        List<Ator> actors = actorsDTO.stream().map(actor -> new Ator(actor.getNome())).collect(Collectors.toList());
+        List<Ator> actorsResponse =  atorService.saveActors(actors);
+        return new ResponseEntity<>(actorsResponse, HttpStatus.CREATED);
     }
-
     @CrossOrigin
     @GetMapping
     public ResponseEntity<List<Ator>> findAllActors(){
